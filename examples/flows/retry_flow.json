@@ -1,0 +1,14 @@
+{
+  "imports": ["retry_nodes.py"],
+  "nodes": [
+    {"name": "attempt", "fn": "attempt_task"},
+    {"name": "finalize", "fn": "finalize"}
+  ],
+  "edges": [
+    ["START", "attempt"],
+    ["finalize", "END"]
+  ],
+  "conditional_edges": [
+    {"source": "attempt", "router": "route_retry", "mapping": {"retry": "attempt", "ok": "finalize"}}
+  ]
+}

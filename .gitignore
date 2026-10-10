@@ -1,0 +1,8 @@
+# 检查点（运行时生成，按 run_id 分目录）
+.checkpoints/
+checkpoints*/
+*checkpoints*/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
